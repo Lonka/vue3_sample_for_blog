@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { http } from '~/utils/http/axios'
+
+http.request({ url: '/blog' })
+
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
