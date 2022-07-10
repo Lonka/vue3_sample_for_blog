@@ -13,6 +13,7 @@ import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
+import { viteMockServe } from 'vite-plugin-mock'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -120,6 +121,15 @@ export default defineConfig({
       runtimeOnly: true,
       compositionOnly: true,
       include: [path.resolve(__dirname, 'locales/**')],
+    }),
+
+    viteMockServe({
+      ignore: /^\_/,
+      mockPath: './mock',
+      injectCode: `
+      import { setupProdMockServer } from './mock/_createProductionServer';
+      setupProdMockServer();
+      `,
     }),
 
     // https://github.com/antfu/vite-plugin-inspect
