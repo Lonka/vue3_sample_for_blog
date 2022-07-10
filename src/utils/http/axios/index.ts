@@ -6,7 +6,7 @@ import { deepMerge } from '~/utils'
 function createAxios(opt?: Partial<CreateAxiosOptions>) {
   return new LKAxios(
     deepMerge({
-      baseURL: 'https://lonka.github.io',
+      baseURL: '',
       timeout: 10 * 1000,
       headers: { 'Content-Type': ContentTypeEnum.JSON },
       requestOptions: {

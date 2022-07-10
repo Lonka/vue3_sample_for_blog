@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { http } from '~/utils/http/axios'
 
-http.request({ url: '/blog' })
+http.request({ url: '/api/v1/test?id=3' }).then((res) => {
+  console.log(res.data)
+})
 
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
