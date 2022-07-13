@@ -1,4 +1,14 @@
 /**
+ * @description: Request result
+ */
+export enum ResultEnum {
+  SUCCESS = 200,
+  ERROR = -1,
+  TIMEOUT = 10042,
+  TYPE = 'success',
+}
+
+/**
  * @description: Request Verb
  */
 export enum RequestEnum {

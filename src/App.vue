@@ -1,8 +1,20 @@
 <script setup lang="ts">
 import { http } from '~/utils/http/axios'
 
-http.request({ url: '/api/v1/test?id=3' }).then((res) => {
-  console.log(res.data)
+http.request({ url: '/test', method: 'get', params: { id: 3 } }).then((res) => {
+  console.log(res)
+})
+
+http.request({ url: '/test', method: 'post', data: { name: 'new name' } }).then((res) => {
+  console.log(res)
+})
+
+http.request({ url: '/test/6', method: 'put', data: { name: 'edit name' } }).then((res) => {
+  console.log(res)
+})
+
+http.request({ url: '/test/1', method: 'delete' }).then((res) => {
+  console.log(res)
 })
 
 // https://github.com/vueuse/head
